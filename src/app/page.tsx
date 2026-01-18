@@ -11,8 +11,7 @@ const mockCompanies: Company[] = [
     industry: 'Software Development',
     contacts: [
       {
-        name: 'John Smith', company: 'TechVision', email: 'john@techvision.com', generateddesc: 'Experienced CEO with 15+ years in tech leadership, focused on innovative cloud solutions.',
-      },
+        name: 'John Smith', company: 'TechVision', email: 'john@techvision.com', generateddesc: 'Experienced CEO with 15+ years in tech leadership, focused on innovative cloud solutions.',},
       { name: 'Sarah Johnson', company: 'TechVision', email: 'sarah@techvision.com', generateddesc: 'Marketing expert specializing in B2B tech campaigns and brand strategy.' },
     ]
   },
