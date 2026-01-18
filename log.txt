@@ -1,0 +1,249 @@
+Website: https://www.apple.com
+Crawled: https://www.apple.com
+Crawled: https://www.apple.com/legal/
+Crawled: https://www.apple.com/sitemap/
+Crawled: https://www.apple.com/legal/internet-services/terms/site.html
+Crawled: https://www.apple.com/us/shop/goto/help/sales_refunds
+Crawled: https://www.apple.com/legal/privacy/
+Crawled: https://www.apple.com/apple-events/
+Crawled: https://www.apple.com/contact/
+Crawled: https://locate.apple.com/
+Crawled: https://www.apple.com/careers/us/
+Crawled: https://www.apple.com/compliance/
+Crawled: https://investor.apple.com/
+Crawled: https://www.apple.com/leadership/
+Found email: media.help@apple.com on https://www.apple.com/leadership/
+Crawled: https://www.apple.com/racial-equity-justice-initiative/
+Crawled: https://www.apple.com/diversity/
+Crawled: https://www.apple.com/newsroom/
+Crawled: https://www.apple.com/supply-chain/
+Crawled: https://www.apple.com/education-initiative/
+Crawled: https://www.apple.com/environment/
+Crawled: https://www.apple.com/accessibility/
+Crawled: https://www.apple.com/us_epp_55499/store
+Found email: user@example.com on https://www.apple.com/us_epp_55499/store
+Crawled: https://www.apple.com/government/
+Found email: statelocalsales@apple.com on https://www.apple.com/government/
+Found email: federalsales@apple.com on https://www.apple.com/government/
+Crawled: https://www.apple.com/education/k12/how-to-buy/
+Crawled: https://www.apple.com/healthcare/
+Crawled: https://www.apple.com/us_epp_67909/store
+Crawled: https://apps.apple.com/us/app/apple-store/id375380948
+Crawled: https://www.apple.com/business/
+Crawled: https://www.apple.com/us/shop/goto/help
+Crawled: https://www.apple.com/today/camp/
+Crawled: https://www.apple.com/today/
+Crawled: https://www.apple.com/today/groups/
+Crawled: https://account.apple.com/
+Found email: name@example.com on https://account.apple.com/
+Crawled: https://www.apple.com/us/shop/goto/account
+Crawled: https://www.apple.com/apple-pay/
+Crawled: https://www.apple.com/apple-cash/
+Crawled: https://www.apple.com/us/shop/goto/giftcards
+Found email: j.appleseed@icloud.com on https://www.apple.com/us/shop/goto/giftcards
+Crawled: https://support.apple.com/kb/HT209218
+Error processing https://www.apple.com/105/media/us/home/2025/0be9a056-b91a-427c-9e02-0fa4b3636ce1/films/dear-apple/home-dear-apple-tpl-us-2025_16x9.m3u8: Page.goto: Download is starting
+Call log:
+  - navigating to "https://www.apple.com/105/media/us/home/2025/0be9a056-b91a-427c-9e02-0fa4b3636ce1/films/dear-apple/home-dear-apple-tpl-us-2025_16x9.m3u8", waiting until "domcontentloaded"
+
+Error processing https://www.apple.com/105/media/us/home/2025/0be9a056-b91a-427c-9e02-0fa4b3636ce1/films/let-loose/home-let-loose-tpl-us-2025_16x9.m3u8: Page.goto: Download is starting
+Call log:
+  - navigating to "https://www.apple.com/105/media/us/home/2025/0be9a056-b91a-427c-9e02-0fa4b3636ce1/films/let-loose/home-let-loose-tpl-us-2025_16x9.m3u8", waiting until "domcontentloaded"
+
+Error processing https://www.apple.com/105/media/us/home/2025/0be9a056-b91a-427c-9e02-0fa4b3636ce1/films/no-frame-missed/home-no-frame-missed-tpl-us-2025_16x9.m3u8: Page.goto: Download is starting
+Call log:
+  - navigating to "https://www.apple.com/105/media/us/home/2025/0be9a056-b91a-427c-9e02-0fa4b3636ce1/films/no-frame-missed/home-no-frame-missed-tpl-us-2025_16x9.m3u8", waiting until "domcontentloaded"
+
+Crawled: https://support.apple.com/ht211924
+Error processing https://www.apple.com/105/media/us/accessibility/2025/d3b1a14d-91ff-4745-b972-046660783b59/films/designed-for-students/accessibility-designed-for-students-tpl-us-2025_16x9.m3u8: Page.goto: Download is starting
+Call log:
+  - navigating to "https://www.apple.com/105/media/us/accessibility/2025/d3b1a14d-91ff-4745-b972-046660783b59/films/designed-for-students/accessibility-designed-for-students-tpl-us-2025_16x9.m3u8", waiting until "domcontentloaded"
+
+Error processing https://www.apple.com/105/media/us/business/2025/2facf38a-1c0b-4d49-9a68-f571d6eb5ab0/films/underdogs/business-underdogs-tpl-us-2025_16x9.m3u8: Page.goto: Download is starting
+Call log:
+  - navigating to "https://www.apple.com/105/media/us/business/2025/2facf38a-1c0b-4d49-9a68-f571d6eb5ab0/films/underdogs/business-underdogs-tpl-us-2025_16x9.m3u8", waiting until "domcontentloaded"
+
+Crawled: https://apps.apple.com/us/app/angry-birds-bounce/id6462195757
+Crawled: https://fitness.apple.com/us/studio-collection/no-shoes-workouts/1779383019
+Crawled: https://music.apple.com/us/playlist/a-list-pop/pl.5ee8333dbe944d9f9151e97d92d1ead9
+Crawled: https://music.apple.com/us/playlist/new-music-daily/pl.2b0e6e332fdf4b7a91164da3162127b5
+Crawled: https://fitness.apple.com/us/workout/hiit-with-jamie-ray/1852535021
+Crawled: https://apps.apple.com/us/app/hello-kitty-island-adventure/id1553505132
+Crawled: https://music.apple.com/us/station/sabrina-carpenter-the-zane-lowe-interview/ra.1837392419
+Crawled: https://tv.apple.com/us/show/ted-lasso/umc.cmc.vtoh0mn0xn7t3c643xqonfzy
+Crawled: https://fitness.apple.com/us/studio-collection/trainers-feature-their-favorites/1783405899
+Crawled: https://apps.apple.com/us/app/nba-2k26-arcade-edition/id6746148175
+Crawled: https://tv.apple.com/us/show/shrinking/umc.cmc.apzybj6eqf6pzccd97kev7bs
+Crawled: https://tv.apple.com/us/show/drops-of-god/umc.cmc.497ttx33nudgzywis3i2bnvuk
+Crawled: https://tv.apple.com/us/show/the-morning-show/umc.cmc.25tn3v8ku4b39tr6ccgb8nl6m
+Crawled: https://tv.apple.com/us/show/down-cemetery-road/umc.cmc.3i55uxosnfpzw7rw1q525iksh
+Crawled: https://tv.apple.com/us/show/hijack/umc.cmc.1dg08zn0g3zx52hs8npoj5qe3
+Crawled: https://tv.apple.com/us/movie/f1-the-movie/umc.cmc.3t6dvnnr87zwd4wmvpdx5came
+Crawled: https://tv.apple.com/us/show/tehran/umc.cmc.337cdk1ou0bmn6frmzxwm7xqd
+Crawled: https://tv.apple.com/us/show/pluribus/umc.cmc.37axgovs2yozlyh3c2cmwzlza
+Crawled: https://www.apple.com/apple-card/
+Crawled: https://fitness.apple.com/subscribe
+Crawled: https://card.apple.com/apply/application
+Crawled: https://wallet.apple.com/apple-card/setup/feature/ccs
+Crawled: https://www.apple.com/us/shop/goto/buy_mac/macbook_pro/14_inch
+Crawled: https://www.apple.com/us/shop/goto/buy_airpods/airpods_pro_3
+Crawled: https://fitness.apple.com/fitness-plus/explore
+Crawled: https://www.apple.com/us/shop/goto/buy_watch/apple_watch_ultra_3
+Crawled: https://www.apple.com/us/shop/goto/bag
+Crawled: https://www.apple.com/us/shop/goto/buy_watch/apple_watch_series_11
+Crawled: https://www.apple.com/us/search
+Crawled: https://www.apple.com/us/shop/goto/buy_ipad/ipad_air
+Crawled: https://support.apple.com/apple-account
+Crawled: https://support.apple.com/billing
+Crawled: https://support.apple.com/repair
+Crawled: https://support.apple.com/accessibility
+Crawled: https://www.apple.com/retail/geniusbar/
+Crawled: https://checkcoverage.apple.com/us/en
+Crawled: https://support.apple.com/
+Crawled: https://discussions.apple.com/welcome
+Crawled: https://www.apple.com/airtag/
+Crawled: https://www.apple.com/accessibility/assistive-technologies/
+Crawled: https://www.apple.com/us/shop/goto/accessories/all_accessories/beats_featured
+Crawled: https://www.apple.com/us/shop/goto/accessories/all_accessories/made_by_apple
+Crawled: https://www.apple.com/apple-books/
+Crawled: https://support.apple.com/tv
+Crawled: https://www.apple.com/app-store/
+Crawled: https://support.apple.com/music
+Crawled: https://www.apple.com/apple-news/
+Crawled: https://www.apple.com/apple-one/
+Crawled: https://www.apple.com/apple-arcade/
+Crawled: https://www.apple.com/apple-podcasts/
+Crawled: https://www.apple.com/airplay/
+Crawled: https://www.apple.com/home-app/
+Crawled: https://www.apple.com/entertainment/
+Crawled: https://www.apple.com/services/
+Crawled: https://www.apple.com/apple-tv-app/
+Crawled: https://support.apple.com/apple-tv
+Crawled: https://support.apple.com/homepod
+Crawled: https://www.apple.com/apple-tv/
+Crawled: https://www.apple.com/us/shop/goto/buy_homepod/homepod
+Crawled: https://www.apple.com/us/shop/goto/smart_home/accessories
+Crawled: https://www.apple.com/us/shop/goto/product/MW5G3
+Crawled: https://www.apple.com/us/shop/goto/buy_homepod/homepod_mini
+Crawled: https://www.apple.com/us/shop/goto/buy_tv/apple_tv_4k
+Crawled: https://www.apple.com/homepod-2nd-generation/
+Crawled: https://www.apple.com/homepod-mini/
+Crawled: https://www.apple.com/apple-tv-4k/
+Crawled: https://www.apple.com/apple-music/
+Crawled: https://www.apple.com/tv-home/
+Crawled: https://www.apple.com/airpods-pro/hearing-health/
+Crawled: https://support.apple.com/airpods
+Crawled: https://www.apple.com/airpods/compare/
+Crawled: https://www.apple.com/us/shop/goto/accessories/all_accessories/headphones_speakers
+Crawled: https://www.apple.com/airpods-max/
+Crawled: https://www.apple.com/airpods-pro/
+Crawled: https://www.apple.com/airpods-4/
+Crawled: https://www.apple.com/airpods/
+Crawled: https://support.apple.com/apple-vision-pro
+Crawled: https://www.apple.com/os/visionos/
+Crawled: https://www.apple.com/apple-vision-pro/specs/
+Crawled: https://www.apple.com/apple-vision-pro/
+Crawled: https://www.apple.com/us/shop/goto/vision/accessories
+Crawled: https://www.apple.com/retail/instore-shopping-session/session-selection/
+Crawled: https://www.apple.com/apple-watch-for-your-kids/
+Crawled: https://www.apple.com/os/watchos/
+Crawled: https://support.apple.com/watch
+Crawled: https://www.apple.com/apple-fitness-plus/
+Crawled: https://www.apple.com/watch/compare/
+Crawled: https://www.apple.com/watch/why-apple-watch/
+Crawled: https://www.apple.com/us/shop/goto/watch/accessories
+Crawled: https://www.apple.com/us/shop/goto/watch/bands
+Crawled: https://www.apple.com/apple-watch-ultra-3/
+Crawled: https://www.apple.com/apple-watch-se-3/
+Crawled: https://www.apple.com/apple-watch-nike/
+Crawled: https://www.apple.com/apple-watch-hermes/
+Crawled: https://www.apple.com/watch/
+Crawled: https://www.apple.com/siri/
+Crawled: https://www.apple.com/apple-watch-series-11/
+Crawled: https://www.apple.com/wallet/
+Crawled: https://www.apple.com/privacy/
+Crawled: https://support.apple.com/iphone
+Crawled: https://www.apple.com/os/ios/
+Crawled: https://www.apple.com/us/shop/goto/buy_iphone/carrier_offers
+Crawled: https://www.apple.com/iphone/switch/
+Crawled: https://www.apple.com/iphone/compare/
+Crawled: https://www.apple.com/us/shop/goto/iphone/accessories
+Crawled: https://www.apple.com/iphone-16e/
+Crawled: https://www.apple.com/iphone-air/
+Crawled: https://www.apple.com/iphone-17-pro/
+Crawled: https://www.apple.com/iphone-17/
+Crawled: https://www.apple.com/us/shop/goto/buy_iphone/iphone_16
+Crawled: https://www.apple.com/os/ipados/
+Crawled: https://www.apple.com/us/shop/goto/ipad/accessories
+Crawled: https://support.apple.com/ipad
+Crawled: https://www.apple.com/iphone/
+Crawled: https://www.apple.com/ipad/compare/
+Crawled: https://www.apple.com/ipad-keyboards/
+Crawled: https://www.apple.com/ipad-mini/
+Crawled: https://www.apple.com/apple-pencil/
+Crawled: https://www.apple.com/ipad/
+Crawled: https://www.apple.com/ipad-11/
+Crawled: https://www.apple.com/ipad-pro/
+Crawled: https://www.apple.com/ipad-air/
+Crawled: https://www.apple.com/icloud/
+Found email: golfer_11orbital@icloud.com on https://www.apple.com/icloud/
+Found email: 11lattes_besties@icloud.com on https://www.apple.com/icloud/
+Found email: stapled.11.rueful@icloud.com on https://www.apple.com/icloud/
+Crawled: https://www.apple.com/education/
+Crawled: https://www.apple.com/business/mac/
+Crawled: https://www.apple.com/macos/continuity/
+Crawled: https://www.apple.com/apple-intelligence/
+Crawled: https://www.apple.com/apple-creator-studio/
+Crawled: https://www.apple.com/os/macos/
+Crawled: https://www.apple.com/apps/
+Crawled: https://www.apple.com/applecare/
+Crawled: https://www.apple.com/us/shop/goto/mac/accessories
+Crawled: https://www.apple.com/mac/best-mac/
+Crawled: https://support.apple.com/mac
+Crawled: https://www.apple.com/mac/compare/
+Crawled: https://www.apple.com/mac-pro/
+Crawled: https://www.apple.com/mac/mac-does-that/
+Crawled: https://www.apple.com/displays/
+Crawled: https://www.apple.com/macbook-pro/
+Crawled: https://www.apple.com/mac-studio/
+Crawled: https://www.apple.com/imac/
+Crawled: https://www.apple.com/mac-mini/
+Crawled: https://www.apple.com/r/store/government/
+Crawled: https://www.apple.com/mac/
+Crawled: https://www.apple.com/us/shop/goto/eppstore/veteransandmilitary
+Crawled: https://www.apple.com/macbook-air/
+Crawled: https://www.apple.com/retail/business/
+Crawled: https://www.apple.com/us/shop/goto/special_deals
+Crawled: https://www.apple.com/us/shop/goto/educationrouting
+Crawled: https://www.apple.com/us/shop/goto/personal_setup
+Crawled: https://www.apple.com/us/shop/goto/trade_in
+Crawled: https://www.apple.com/us/shop/goto/order/list
+Crawled: https://www.apple.com/us/shop/goto/payment_plan
+Crawled: https://www.apple.com/retail/
+Crawled: https://www.apple.com/us/shop/goto/buy_watch
+Crawled: https://www.apple.com/us/shop/goto/buy_accessories
+Crawled: https://www.apple.com/us/shop/goto/buy_vision
+Crawled: https://www.apple.com/us/shop/goto/airpods/accessories
+Crawled: https://www.apple.com/us/shop/goto/buy_iphone
+Crawled: https://www.apple.com/us/shop/goto/buy_mac
+Crawled: https://www.apple.com/us/shop/goto/buy_ipad
+Crawled: https://www.apple.com/us/shop/goto/store
+Crawled: https://www.apple.com/wss/fonts
+Crawled: https://www.apple.com/choose-country-region/
+Crawled: https://www.apple.com/vn/
+Crawled: https://www.apple.com/za/
+Crawled: https://www.apple.com/uk/
+Crawled: https://www.apple.com/uz/
+Crawled: https://www.apple.com/ug/
+Crawled: https://www.apple.com/ua/
+Crawled: https://www.apple.com/tn/
+Crawled: https://www.apple.com/tw/
+Crawled: https://www.apple.com/tm/
+Crawled: https://www.apple.com/tr/
+Crawled: https://www.apple.com/tj/
+Crawled: https://www.apple.com/th/
+Crawled: https://www.apple.com/sn/
+Crawled: https://www.apple.com/sk/
+Crawled: https://www.apple.com/sg/
+Crawled: https://www.apple.com/sa/
+Crawled: https://www.apple.com/si/
