@@ -12,7 +12,7 @@ Lucia's Vespa is an AI-powered sponsorship outreach platform that automates the 
 
 ## How we built it
 - Frontend: Next.js with TypeScript, Tailwind CSS, and Framer Motion for smooth animations
-- Authentication: Auth0 for secure user authentication and session management
+- Authentication: Clerk for secure user authentication and session management
 - AI Pipeline: Gumloop API for intelligent company discovery and email extraction through web crawling and scraping
 - Database: MongoDB Atlas for storing campaigns and contact data
 - Email: NodeMailer with Gmail SMTP for sending outreach emails
