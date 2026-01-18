@@ -1,2 +1,0 @@
-Website: http://apple.com
-Website: http://microsoft.com
