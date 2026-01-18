@@ -1,4 +1,4 @@
-# Lucia's Vespa, Hackathon Outreach Bot
+# Lucia's Vespa, Hackathon Outreach Pipeline
 
 ## Inspiration
 As members of the ConUHacks organizing team, we know firsthand that sponsor outreach is one of the most time-consuming yet critical parts of the job.
