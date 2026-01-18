@@ -5,6 +5,9 @@ from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 import time
+import requests
+
+NUM_COMPANIES = 3
 
 def crawl_page(url):
     """Fetch the HTML content of a page using an existing browser page instance."""
@@ -154,26 +157,45 @@ def extract_emails(html):
     return valid_emails
 
 if __name__ == "__main__":
-    input_file = "urls.txt"  # File containing list of URLs, one per line
+    # input_file = "urls.txt"  # File containing list of URLs, one per line
+    
+    url = "https://api.gumloop.com/api/v1/start_pipeline?user_id=gEu4vZfdreQmR8UXPCjPYe4Q4vz1&saved_item_id=b1wCTakaN5WRdqffK9CfDf"
+    
+    payload = {"Number of companies":NUM_COMPANIES,"Industry/Sector":"Technology"}
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 790fb37e690f4d6290672707cf86150e"
+    }
+    
+    response1 = requests.request("POST", url, json=payload, headers=headers)
+    response2 = response1.json()
+    url = "https://api.gumloop.com/api/v1/get_pl_run?run_id=" + response2.get("run_id") + "&user_id=gEu4vZfdreQmR8UXPCjPYe4Q4vz1"
+    headers = {
+    "Authorization": "Bearer 790fb37e690f4d6290672707cf86150e"
+    }
 
-    try:
-        with open(input_file, "r") as file:
-            urls = [line.strip() for line in file if line.strip()]
-        
-        for url in urls:
-            if not url.startswith("http"):
-                url = "http://" + url  # Ensure the URL starts with http or https
-            # Open file in append mode ('a' will add content at the end)
+    response = requests.get(url, headers=headers).json()
+    while(response.get("state") != "DONE"):
+        url = "https://api.gumloop.com/api/v1/get_pl_run?run_id=" + response2.get("run_id") + "&user_id=gEu4vZfdreQmR8UXPCjPYe4Q4vz1"
+        headers = {
+        "Authorization": "Bearer 790fb37e690f4d6290672707cf86150e"
+        }
+
+        response = requests.get(url, headers=headers).json()
+
+    urls = response["outputs"]["output123"]
+
+    for url in urls:
+        if not url.startswith("http"):
+            url = "http://" + url  # Ensure the URL starts with http or https
+        # Open file in append mode ('a' will add content at the end)
+        with open("emails.txt", "a", encoding="utf-8") as file:
+            file.write(f"Website: {url}\n")
+        with open("log.txt", "a", encoding="utf-8") as file:
+            file.write(f"Website: {url}\n")
+        emails = bfs_crawl(url)
+        for email in emails:
             with open("emails.txt", "a", encoding="utf-8") as file:
-                file.write(f"Website: {url}\n")
-            with open("log.txt", "a", encoding="utf-8") as file:
-                file.write(f"Website: {url}\n")
-            emails = bfs_crawl(url)
-            for email in emails:
-                with open("emails.txt", "a", encoding="utf-8") as file:
-                    file.write(email + "\n")
-            with open("emails.txt", "a", encoding="utf-8") as file:
-                file.write("\n")
-    except FileNotFoundError:
-        print(f"Input file '{input_file}' not found.")
-        pass
+                file.write(email + "\n")
+        with open("emails.txt", "a", encoding="utf-8") as file:
+            file.write("\n")

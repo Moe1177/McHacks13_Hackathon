@@ -1,1 +1,2 @@
-Website: https://www.apple.com
+Website: http://apple.com
+Website: http://microsoft.com
