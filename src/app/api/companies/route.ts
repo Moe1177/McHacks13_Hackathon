@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs/server";
 import { Company } from "@/types";
 
 // Mock data - fake companies for testing
@@ -65,6 +66,12 @@ const mockCompanies: Company[] = [
 
 // GET /api/companies - Returns list of companies
 export async function GET() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   // Later: Replace this with real Gumloop/MongoDB call
   return NextResponse.json(mockCompanies);
 }

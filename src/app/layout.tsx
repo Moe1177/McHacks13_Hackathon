@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { ClerkProvider, SignedIn, UserButton } from "@clerk/nextjs";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Hackathon Outreach Bot",
-  description: "An all-in-one automated solution for sales, marketing, and sponsorship outreach",
+  description:
+    "An all-in-one automated solution for sales, marketing, and sponsorship outreach",
 };
 
 export default function RootLayout({
@@ -12,8 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <ClerkProvider afterSignOutUrl="/">
+      <html lang="en">
+        <body>
+          <header className="flex justify-end p-4">
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </header>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

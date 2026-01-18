@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs/server";
 import { ScrapeRequest, Company } from "@/types";
 
 // POST /api/scrape - Triggers scraping for a company or sector
 export async function POST(request: Request) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   // 1. Get the data sent from the frontend
   const body: ScrapeRequest = await request.json();
 
@@ -10,7 +17,7 @@ export async function POST(request: Request) {
   if (!body.companyName && !body.sector) {
     return NextResponse.json(
       { error: "Must provide companyName or sector" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 

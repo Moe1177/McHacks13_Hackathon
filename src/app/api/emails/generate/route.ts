@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs/server";
 import { EmailGenerateRequest, GeneratedEmail } from "@/types";
 
 // POST /api/emails/generate - Generates a custom outreach email
 export async function POST(request: Request) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   // 1. Get the data sent from the frontend
   const body: EmailGenerateRequest = await request.json();
 
@@ -10,7 +17,7 @@ export async function POST(request: Request) {
   if (!body.companyId || !body.contactId || !body.purpose) {
     return NextResponse.json(
       { error: "Must provide companyId, contactId, and purpose" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
