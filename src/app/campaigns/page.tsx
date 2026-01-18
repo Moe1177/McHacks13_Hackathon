@@ -2,8 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Plus, RefreshCw, Clock, CheckCircle, XCircle, Loader2 } from 'lucide-react';
+
+interface Contact {
+  email: string;
+  company: string;
+}
 
 interface Campaign {
   _id: string;
@@ -11,12 +17,13 @@ interface Campaign {
   sector: string;
   numberOfCompanies: number;
   status: 'pending' | 'running' | 'completed' | 'failed';
-  results: any;
+  contacts: Contact[] | null;
   createdAt: string;
 }
 
 export default function CampaignsPage() {
   const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
   const [creating, setCreating] = useState(false);
@@ -234,7 +241,10 @@ export default function CampaignsPage() {
               key={campaign._id}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white border rounded-xl p-4 hover:shadow-md transition-shadow"
+              onClick={() => campaign.status === 'completed' && router.push(`/campaigns/${campaign._id}`)}
+              className={`bg-white border rounded-xl p-4 hover:shadow-md transition-shadow ${
+                campaign.status === 'completed' ? 'cursor-pointer' : ''
+              }`}
             >
               <div className="flex justify-between items-start">
                 <div>
@@ -247,27 +257,15 @@ export default function CampaignsPage() {
                 <StatusBadge status={campaign.status} />
               </div>
 
-              {/* Show results if completed */}
-              {campaign.status === 'completed' && campaign.results && (
+              {/* Show preview if completed */}
+              {campaign.status === 'completed' && campaign.contacts && (
                 <div className="mt-4 pt-4 border-t">
-                  <p className="text-sm font-medium text-slate-700 mb-2">Results:</p>
-                  {campaign.results.extracted_emails && (
+                  <div className="flex justify-between items-center">
                     <div className="text-sm text-slate-600">
-                      <p>{campaign.results.extracted_emails.length} emails found</p>
-                      <div className="mt-2 max-h-32 overflow-y-auto">
-                        {campaign.results.extracted_emails.slice(0, 10).map((email: string, i: number) => (
-                          <span key={i} className="inline-block bg-slate-100 px-2 py-1 rounded mr-2 mb-2 text-xs">
-                            {email}
-                          </span>
-                        ))}
-                        {campaign.results.extracted_emails.length > 10 && (
-                          <span className="text-slate-400 text-xs">
-                            +{campaign.results.extracted_emails.length - 10} more
-                          </span>
-                        )}
-                      </div>
+                      <p>{campaign.contacts.length} contacts found</p>
                     </div>
-                  )}
+                    <span className="text-green-600 text-sm font-medium">View details →</span>
+                  </div>
                 </div>
               )}
             </motion.div>
