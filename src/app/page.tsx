@@ -1,59 +1,68 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Building2, Users, DollarSign, MapPin, TrendingUp, Search, Star, Sparkles } from 'lucide-react';
+import { Search, Star, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-
-
-interface Company {
-  id: string;
-  name: string;
-  industry: string;
-  description: string;
-  employees: string;
-  revenue: string;
-  location: string;
-}
+import { RepsTable } from './component/RepsTable';
 
 const mockCompanies: Company[] = [
   {
-    id: '1',
-    name: 'TechVision Inc.',
+    name: 'TechVision',
     industry: 'Software Development',
-    description: 'Leading provider of cloud-based enterprise solutions',
-    employees: '2,500+',
-    revenue: '$450M',
-    location: 'San Francisco, CA'
+    contacts: [
+      {
+        name: 'John Smith', company: 'TechVision', email: 'john@techvision.com', generateddesc: 'Experienced CEO with 15+ years in tech leadership, focused on innovative cloud solutions.',
+      },
+      { name: 'Sarah Johnson', company: 'TechVision', email: 'sarah@techvision.com', generateddesc: 'Marketing expert specializing in B2B tech campaigns and brand strategy.' },
+    ]
   },
   {
-    id: '2',
-    name: 'GreenEnergy Solutions',
-    industry: 'Renewable Energy',
-    description: 'Innovative solar and wind energy infrastructure',
-    employees: '1,200+',
-    revenue: '$280M',
-    location: 'Austin, TX'
+    name: 'CloudSync',
+    industry: 'Cloud Computing',
+    contacts: [
+      { name: 'Michael Chen',  company: 'CloudSync', email: 'michael@cloudsync.com', generateddesc: 'Business development professional with expertise in cloud partnerships and enterprise sales.' },
+      { name: 'Emily Davis',  company: 'CloudSync', email: 'emily@cloudsync.com', generateddesc: 'Partnerships manager skilled in building strategic alliances in the cloud industry.' },
+    ]
   },
   {
-    id: '3',
-    name: 'DataStream Analytics',
+    name: 'DataCore Analytics',
     industry: 'Data Science',
-    description: 'AI-powered business intelligence and analytics platform',
-    employees: '850+',
-    revenue: '$120M',
-    location: 'Seattle, WA'
+    contacts: [
+      { name: 'Robert Wilson',  company: 'DataCore Analytics', email: 'robert@datacore.com', generateddesc: 'VP Marketing with deep knowledge in data analytics and AI marketing strategies.' },
+      { name: 'Jessica Lee',  company: 'DataCore Analytics', email: 'jessica@datacore.com', generateddesc: 'Event coordinator experienced in organizing tech conferences and data science meetups.' },
+    ]
   },
-  {
-    id: '4',
-    name: 'HealthTech Innovations',
-    industry: 'Healthcare Technology',
-    description: 'Digital health solutions and telemedicine platform',
-    employees: '3,100+',
-    revenue: '$620M',
-    location: 'Boston, MA'
-  }
 ];
+
+interface Contact {
+    name: string;
+    company: string;
+    email: string;
+    generateddesc: string;
+}
+
+interface Company {
+  name: string;
+  industry: string;
+  contacts: Contact[];
+}
+
+const CompanyCard: React.FC<{ company: Company }> = ({ company }) => (
+  <motion.div 
+    className="w-full max-w-7xl mx-auto bg-white rounded-xl shadow-md p-6 border border-slate-200"
+    whileHover={{ scale: 1.02 }}
+  >
+    <h3 className="text-lg font-bold text-slate-900 mb-2">
+      {company.name}
+    </h3>
+    <p className="text-sm text-slate-600 mb-4">
+      {company.industry}
+    </p>
+
+    <RepsTable contacts={company.contacts} />
+  </motion.div>
+);
+
 
 export default function SearchDashboard() {
   const [companyName, setCompanyName] = useState('');
@@ -77,8 +86,7 @@ export default function SearchDashboard() {
       setSearchMode('type');
       // Mock search by type/industry
       const results = mockCompanies.filter(company =>
-        company.industry.toLowerCase().includes(companyType.toLowerCase()) ||
-        company.description.toLowerCase().includes(companyType.toLowerCase())
+        company.industry.toLowerCase().includes(companyType.toLowerCase())
       );
       setSearchResults(results.length > 0 ? results : mockCompanies);
     }
@@ -95,7 +103,7 @@ export default function SearchDashboard() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div className="px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <motion.div 
         className="mb-8 text-center"
@@ -118,7 +126,8 @@ export default function SearchDashboard() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <div className="grid grid-cols-2 gap-6">
-          {/* Company Name Search */}
+        
+      {/* Company Name Search */}
           <motion.div 
             className="space-y-3"
             initial={{ opacity: 0, x: -20 }}
@@ -160,7 +169,7 @@ export default function SearchDashboard() {
               Name the industry of the company
             </label>
             <div className="relative">
-              <input
+              <input  
                 type="text"
                 value={companyType}
                 onChange={(e) => setCompanyType(e.target.value)}
@@ -182,21 +191,26 @@ export default function SearchDashboard() {
 
       {/* Results Section */}
       {searchResults.length > 0 && (
-        <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-slate-900 text-2xl">
-              {searchMode === 'name' 
-                ? `Results for "${companyName}"` 
-                : `Companies matching "${companyType}"`}
-            </h2>
-            <span className="text-slate-600 text-sm">
-              {searchResults.length} {searchResults.length === 1 ? 'result' : 'results'} found
-            </span>
-          </div>
-          
-        </div>
-      )}
-
+      <div className="space-y-6">
+      <div className="flex items-center justify-between">
+      <h2 className="text-slate-900 text-2xl">
+        {searchMode === 'name' 
+          ? `Results for "${companyName}"` 
+          : `Companies matching "${companyType}"`}
+      </h2>
+      <span className="text-slate-600 text-sm">
+        {searchResults.length} {searchResults.length === 1 ? 'result' : 'results'} found
+      </span>
+    </div>
+    
+    {/* Grid of Company Cards with RepsTable */}
+    <div className="space-y-6">
+      {searchResults.map((company) => (
+        <CompanyCard key={company.name} company={company} />
+      ))}
+    </div>
+  </div>
+)}
       {/* Empty State */}
       {searchResults.length === 0 && (searchMode === null) && (
         <motion.div 
@@ -212,6 +226,11 @@ export default function SearchDashboard() {
           <p className="text-slate-600 max-w-md mx-auto">
             Get in touch with ease and market the way you need 
           </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {searchResults.map((company) => (
+              <CompanyCard key={company.name} company={company} />
+            ))}
+          </div>
         </motion.div>
       )}
     </div>
