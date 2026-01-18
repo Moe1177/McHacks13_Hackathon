@@ -3,6 +3,12 @@ import { auth } from "@clerk/nextjs/server";
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 
+// Contact extracted from Gumloop results
+interface ExtractedContact {
+  email: string;
+  company: string;
+}
+
 // Campaign document structure
 interface Campaign {
   _id?: ObjectId;
@@ -12,7 +18,7 @@ interface Campaign {
   numberOfCompanies: number;
   status: "pending" | "running" | "completed" | "failed";
   gumloopRunId: string | null;
-  results: any | null;
+  contacts: ExtractedContact[] | null;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -66,20 +72,32 @@ async function checkGumloopStatus(runId: string) {
   return response.json();
 }
 
-// Helper: Clean results by removing empty strings from arrays
-function cleanResults(obj: any): any {
-  if (Array.isArray(obj)) {
-    // Filter out empty strings, then recursively clean remaining items
-    return obj.filter(item => item !== "").map(item => cleanResults(item));
-  } else if (obj !== null && typeof obj === "object") {
-    // Recursively clean object properties
-    const cleaned: any = {};
-    for (const key in obj) {
-      cleaned[key] = cleanResults(obj[key]);
-    }
-    return cleaned;
+// Helper: Extract company name from email domain
+function extractCompanyFromEmail(email: string): string {
+  const domain = email.split("@")[1];
+  if (!domain) return "Unknown";
+  // Remove TLD (.com, .io, etc.) and return company name
+  const parts = domain.split(".");
+  // Handle cases like "company.co.uk" - take the first part
+  return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+}
+
+// Helper: Process Gumloop results into contacts array
+function processGumloopResults(results: any): ExtractedContact[] {
+  if (!results?.extracted_emails || !Array.isArray(results.extracted_emails)) {
+    return [];
   }
-  return obj;
+
+  // Filter empty strings, deduplicate, and transform to contacts
+  const filtered = results.extracted_emails.filter(
+    (email: string) => email && email.trim() !== ""
+  ) as string[];
+  const uniqueEmails = [...new Set(filtered)];
+
+  return uniqueEmails.map((email) => ({
+    email,
+    company: extractCompanyFromEmail(email),
+  }));
 }
 
 // Helper: Poll for completion (runs in background)
@@ -98,21 +116,21 @@ async function pollForCompletion(campaignId: ObjectId, runId: string) {
       console.log(`[Campaign ${campaignId}] Status: ${status.state}`);
 
       if (status.state === "DONE") {
-        // Clean results - remove empty strings from arrays
-        const cleanedResults = cleanResults(status.outputs);
+        // Process results into contacts with email + company
+        const contacts = processGumloopResults(status.outputs);
 
         await campaigns.updateOne(
           { _id: campaignId },
           {
             $set: {
               status: "completed",
-              results: cleanedResults,
+              contacts,
               updatedAt: new Date(),
             },
           }
         );
         console.log(`[Campaign ${campaignId}] Completed!`);
-        console.log(`[Campaign ${campaignId}] Results (cleaned):`, JSON.stringify(cleanedResults, null, 2));
+        console.log(`[Campaign ${campaignId}] Found ${contacts.length} contacts:`, JSON.stringify(contacts, null, 2));
         break;
       }
 
@@ -172,7 +190,7 @@ export async function POST(request: Request) {
       numberOfCompanies: body.numberOfCompanies || 1,
       status: "pending",
       gumloopRunId: null,
-      results: null,
+      contacts: null,
       createdAt: new Date(),
       updatedAt: new Date(),
     };

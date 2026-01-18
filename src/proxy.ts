@@ -1,12 +1,27 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-// Protect all routes except Next.js internals and static files
-const isProtectedRoute = createRouteMatcher([
-  "/(.*)",
-  "/api(.*)",
-]);
+// Routes that require authentication
+const isProtectedRoute = createRouteMatcher(["/campaigns(.*)"]);
+
+// Home page - redirect to campaigns if logged in
+const isHomePage = createRouteMatcher(["/"]);
 
 export default clerkMiddleware(async (auth, req) => {
+  const { userId } = await auth();
+
+  // Home page behavior
+  if (isHomePage(req)) {
+    if (userId) {
+      // Logged in: redirect to campaigns
+      return NextResponse.redirect(new URL("/campaigns", req.url));
+    } else {
+      // Logged out: redirect to sign-in
+      return NextResponse.redirect(new URL("/sign-in", req.url));
+    }
+  }
+
+  // Protect campaign routes
   if (isProtectedRoute(req)) {
     await auth.protect();
   }
